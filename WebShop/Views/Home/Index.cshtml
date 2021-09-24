@@ -1,0 +1,47 @@
+﻿@model WebShop.Models.SelCatHandlerModel
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Create Products</h1>
+    <br />
+    <br />
+    <div>
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td>Name: </td>
+                    <td><input type="text" name="txtName" /></td>
+                </tr>
+                <tr>
+                    <td>Description: </td>
+                    <td><input type="text" name="txtDescription" /></td>
+                </tr>
+                <tr>
+                    <td>Price $: </td>
+                    <td><input type="number" name="numPrice" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        Categories:
+                    </td>
+                    <td>
+                        @Html.ListBoxFor(m => m.SelectedCategories, Model.Categories, new { id = "cateLst", multiple = "true", @style = "width: 100px;" })
+                        <br />
+                        <br />
+                    </td>
+
+
+                </tr>
+                <tr>
+                    <td colspan="2"><input class="btn-primary" type="submit" value="Save" /></td>
+                </tr>
+            </table>
+        }
+    </div>
+    </div>
+

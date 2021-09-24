@@ -1,0 +1,35 @@
+﻿@model Settings
+
+@{
+    ViewData["Title"] = "Settings";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <br />
+    <br />
+    @using (Html.BeginForm("Settings", "Home", FormMethod.Post))
+    {
+        <table>
+
+            <tr>
+                <td>Use MemoryCache: </td>
+                <td></td>
+                <td>
+                    @Html.CheckBoxFor(model => model.UseInMemoryStorage)
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br />
+
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><input class="btn-primary" type="submit" value="Change Settings" /></td>
+            </tr>
+        </table>
+    }
+</div>
